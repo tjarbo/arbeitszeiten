@@ -5,14 +5,14 @@ anzupassen und so weiter ...
 
 <hr />
 <h2 align="center">
-  🍄 Hier geht's zur Webseite: <a href="https://arbeitszeiten.tjarbo.me/">arbeitszeiten.tjarbo.me</a> 🍄
+  🍄 Hier geht's zur Webseite: <a href="http://arbeitszeiten.tjarbo.me/">arbeitszeiten.tjarbo.me</a> 🍄
 </h2>
 <hr />
 
 
 ## Anleitung
 
-**1. Schritt**: Öffne [arbeitszeiten.tjarbo.me](https://arbeitszeiten.tjarbo.me/)
+**1. Schritt**: Öffne [arbeitszeiten.tjarbo.me](http://arbeitszeiten.tjarbo.me/)
 
 **2. Schrritt**: Gehe jeden Termin einzeln durch und geben folgende Daten an:
   - Den Tag: An welchem Tag musst du arbeiten?
