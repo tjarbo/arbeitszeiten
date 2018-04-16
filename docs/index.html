@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Arbeitszeiten</title>
+</head>
+<body>
+    <header class="w3-container w3-lime">
+        <h1>Deine Arbeitszeiten</h1>
+    </header>
+
+    <div class="w3-row">
+        <!-- NEUER EINTRAG -->
+        <div class="w3-col l8 m6">
+            <div class="w3-container w3-section">
+                <div class="w3-card-4">
+                    <!-- HEADER -->
+                    <header class="w3-container w3-border-bottom w3-light-grey">
+                        <h3>Neuer Eintrag 📝</h3>
+                    </header>
+                    
+                    <!-- INHALT -->
+                    <div class="w3-container">
+                        <div class="w3-container w3-section">
+                            <div class="w3-section">
+                                <label><b>An welchem Tag 📆?</b></label>
+                                <input id="daten_tag" class="w3-input w3-border w3-light-grey" type="date">
+                            </div>
+
+                            <div class="w3-section">    
+                                <label><b>Ab wie viel Uhr 🕔?</b></label>
+                                <input id="daten_zeit" class="w3-input w3-border w3-light-grey" type="time">
+                            </div>
+
+                            <div class="w3-section">
+                                <input id="daten_abruf" class="w3-check" type="checkbox">
+                                <label>Abrufbereit 📞</label>
+                            </div>
+
+                            <div class="w3-section">
+                                <button id="button_hinzufügen" class="w3-btn w3-blue-grey">Hinzufügen <i class="far fa-calendar-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FOOTER -->
+                    <footer class="w3-container w3-border-top">
+                        <h6 class="w3-text-dark-grey">Coded with <i class="fa fa-heart"></i> by <a href="https://github.com/tjarbo/">tjarbo</a>. Special thanks to <a href="https://github.com/nwcell/">Travis Krause</a> for <a href="https://github.com/nwcell/ics.js/">ics.js <i class="fas fa-plug"></i></a></h6>
+                    </footer>     
+                </div>
+            </div>
+        </div>
+
+        <!-- MEINE ZEITEN -->
+        <div class="w3-col l4 m6">
+            <div class="w3-container w3-section">
+                <div class="w3-card-4">
+                    <!-- HEADER -->
+                    <header class="w3-container w3-border-bottom w3-light-grey">
+                        <h3>Meine Zeiten</h3>
+                    </header>
+                    
+                    <!-- INHALT -->
+                    <div class="w3-container">
+                        <p>
+                            <table id="zeitentabelle" class="w3-table-all w3-hoverable">
+                                    <tr class="w3-amber">
+                                        <th>Zeit</th>
+                                        <th>Abrufbereit</th>
+                                        <th></th>
+                                    </tr>
+                            </table>
+                        </p>
+                    </div>
+
+                    <!-- FOOTER -->
+                    <footer class="w3-container w3-border-top">
+                        <p><button onclick="return exportieren()" class="w3-btn w3-white w3-border w3-border-blue w3-round">Kalender Datei erstellen <i class="fas fa-cloud-download-alt"></i></button></p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+
+<!-- JS-SCRIPTS -->
+<script type="text/javascript" src="ics/ics.file.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
