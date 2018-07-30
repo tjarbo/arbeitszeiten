@@ -3,6 +3,7 @@
 var einträge = {};
 var name_generator = 1;
 
+var eintrag_titel;
 
 //Referenzen erstellen 
 var inp_tag = $("#daten_tag");
@@ -10,7 +11,21 @@ var inp_zeit = $("#daten_zeit");
 var inp_abruf = $("#daten_abruf");
 
 
-function überprüfen() {
+// Einstellungen 
+function einstellungen_laden() {
+    console.log("Lade Einstelltungen");
+    eintrag_titel = (Cookies.get('eintrag_titel') || "Arbeiten");
+    $("#eintrag_titel_inp").val(eintrag_titel);
+}
+
+function einstellungen_speichern() {
+    console.log("Einstellungen speichern");
+    console.log($("#eintrag_titel_inp").val());
+    Cookies.set('eintrag_titel', $("#eintrag_titel_inp").val());
+}
+
+// Kalender
+function kalender_überprüfen() {
     console.log("Angaben prüfen ...");
 
     //Alle Felder zurücksetzen
@@ -37,13 +52,13 @@ function überprüfen() {
     return allesOkay;    
 }
 
-function neuerEintrag() {
+function kalender_eintrag_neu() {
     console.log("Neuen Eintrag erstellen ...");
     
     //Alle Felder überprüfen
-    if (!(überprüfen())) {
+    if (!(kalender_überprüfen())) {
         //Da fehlen noch Angaben ...
-        console.log("Erstellen abgebrochen!");
+        console.log("Es fehlen noch Angaben -> Abbruch!");
         return;
     }
 
@@ -67,16 +82,14 @@ function neuerEintrag() {
     }
 
     //Element zum Löschen eines Eintrages erstellen
-    var löschen_element = document.createElement("span");
-      $(löschen_element).attr("onclick", "return eintragLöschen(" + name_generator + ")");
-        löschen_element.innerHTML = "&times;";
+    var löschen_element = $("<span>").attr("onclick", "return kalender_eintrag_löschen(" + name_generator + ")").html("&times;");
 
     //Neue Zeile erstellen
     var tabellen_eintrag = document.createElement("tr");
       $(tabellen_eintrag).attr("id", name_generator);
-        tabellen_eintrag.appendChild(td(document.createTextNode(tag_text)));
-        tabellen_eintrag.appendChild(td(abruf_element));
-        tabellen_eintrag.appendChild(td(löschen_element));
+      $(tabellen_eintrag).append($("<td>").append(document.createTextNode(tag_text)));
+      $(tabellen_eintrag).append($("<td>").append(abruf_element));
+      $(tabellen_eintrag).append($("<td>").append(löschen_element));
 
     //Zum Array hinzufügen
     einträge[name_generator] = eintrag;
@@ -87,14 +100,7 @@ function neuerEintrag() {
     console.log("Erstellen fertig !");
 }
 
-function td(element) {
-    //Erstelle eine neue Zelle
-    var td = document.createElement("td");
-        td.appendChild(element);
-    return td;
-}
-
-function eintragLöschen(id) {
+function kalender_eintrag_löschen(id) {
     //Eintrag aus dem Array löschen 
     delete einträge[id];
 
@@ -102,12 +108,16 @@ function eintragLöschen(id) {
     $("#" + id).empty();
 }
 
-function exportieren() {
+function kalender_exportieren() {
+    console.log("Starte Export Funktion");
+
+    $("#export_btn").html("Wird exportiert... ");
+    
     var ics_file = ics();
 
     //Erstelle Events
     for (var id in einträge) {
-        var title = "Arbeiten";
+        var title = eintrag_titel;
 
         //Abruf-Label optional hinzufügen
         if (einträge[id].abruf) {
@@ -120,6 +130,9 @@ function exportieren() {
 
     //Datei zum Download bereitstellen
     ics_file.download("deine_arbeitszeiten");
+    $("#export_btn").html("Kalender Datei erstellen <i class='fas fa-cloud-download-alt'></i>");
 }
 
-$('#button_hinzufügen').on("click", neuerEintrag);
+//Setup
+$('#hinzufügen_btn').on("click", kalender_eintrag_neu);
+einstellungen_laden();

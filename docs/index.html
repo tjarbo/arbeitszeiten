@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 
     <title>Arbeitszeiten</title>
 </head>
 <body>
-    <header class="w3-container w3-lime">
-        <h1>Deine Arbeitszeiten</h1>
+
+    <!--KOPF -->
+    <header class="w3-container w3-flat-wet-asphalt w3-text-white">
+        <h1>Arbeitszeiten - Kalender Generator</h1>
     </header>
 
     <div class="w3-row">
         <!-- NEUER EINTRAG -->
-        <div class="w3-col l8 m6">
+        <div class="w3-col l7 m6">
             <div class="w3-container w3-section">
                 <div class="w3-card-4">
-                    <!-- HEADER -->
-                    <header class="w3-container w3-border-bottom w3-light-grey">
-                        <h3>Neuer Eintrag 📝</h3>
+                    <!-- KOPF -->
+                    <header class="w3-container w3-border-bottom w3-flat-belize-hole">
+                        <h3>Eintrag erstellen 📝</h3>
                     </header>
                     
                     <!-- INHALT -->
@@ -34,7 +37,7 @@
                             </div>
 
                             <div class="w3-section">    
-                                <label><b>Ab wie viel Uhr 🕔?</b></label>
+                                <label><b>Um wie viel Uhr 🕔?</b></label>
                                 <input id="daten_zeit" class="w3-input w3-border w3-light-grey" type="time">
                             </div>
 
@@ -44,33 +47,33 @@
                             </div>
 
                             <div class="w3-section">
-                                <button id="button_hinzufügen" class="w3-btn w3-blue-grey">Hinzufügen <i class="far fa-calendar-plus"></i></button>
+                                <button id="hinzufügen_btn" class="w3-btn w3-flat-wet-asphalt">Hinzufügen <i class="far fa-calendar-plus"></i></button>
                             </div>
                         </div>
                     </div>
                     
                     <!-- FOOTER -->
-                    <footer class="w3-container w3-border-top">
+                    <footer class="w3-container w3-border-top w3-hide-small">
                         <h6 class="w3-text-dark-grey">Coded with <i class="fa fa-heart"></i> by <a href="https://github.com/tjarbo/">tjarbo</a>. Special thanks to <a href="https://github.com/nwcell/">Travis Krause</a> for <a href="https://github.com/nwcell/ics.js/">ics.js <i class="fas fa-plug"></i></a></h6>
                     </footer>     
                 </div>
             </div>
         </div>
 
-        <!-- MEINE ZEITEN -->
-        <div class="w3-col l4 m6">
+        <!-- DEINE EINTRÄGE -->
+        <div class="w3-col l5 m6">
             <div class="w3-container w3-section">
                 <div class="w3-card-4">
-                    <!-- HEADER -->
-                    <header class="w3-container w3-border-bottom w3-light-grey">
-                        <h3>Meine Zeiten</h3>
+                    <!-- KOPF -->
+                    <header class="w3-container w3-border-bottom w3-flat-belize-hole">
+                        <h3>Deine Einträge</h3>
                     </header>
                     
                     <!-- INHALT -->
                     <div class="w3-container">
                         <p>
-                            <table id="zeitentabelle" class="w3-table-all w3-hoverable">
-                                    <tr class="w3-amber">
+                            <table id="zeitentabelle" class="w3-table w3-hoverable">
+                                    <tr class="w3-flat-alizarin">
                                         <th>Zeit</th>
                                         <th>Abrufbereit</th>
                                         <th></th>
@@ -80,18 +83,40 @@
                     </div>
 
                     <!-- FOOTER -->
-                    <footer class="w3-container w3-border-top">
-                        <p><button onclick="return exportieren()" class="w3-btn w3-white w3-border w3-border-blue w3-round">Kalender Datei erstellen <i class="fas fa-cloud-download-alt"></i></button></p>
+                    <footer class="w3-container w3-border-top w3-padding">
+                        <button id="export_btn" onclick="return kalender_exportieren()" class="w3-btn w3-flat-belize-hole">Kalender Datei erstellen <i class="fas fa-cloud-download-alt"></i></button>
+                        <button onclick="document.getElementById('modal_einstellungen').style.display='block'" class="w3-btn w3-flat-wet-asphalt ">Einstellungen <i class="fas fa-cogs"></i></button>
                     </footer>
 
                 </div>
             </div>
         </div>  
     </div>
+
+    <div id="modal_space">
+        <div id="modal_einstellungen" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container w3-flat-wet-asphalt">
+                <h3>Einstellungen</h3>
+                <span onclick="document.getElementById('modal_einstellungen').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+              </div>
+
+              <div class="w3-container w3-padding-large">
+                <label>Titel der Einträge</label>
+                <input id="eintrag_titel_inp" class="w3-input" type="text" placeholder="Arbeiten">
+
+                <button class="w3-button w3-flat-nephritis w3-margin-top" onclick="einstellungen_speichern()">Speichern</button>
+              </div>
+
+            </div>
+          </div>
+    </div>
 </body>
 
 <!-- JS-SCRIPTS -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/ics.file.js"></script>
+<script type="text/javascript" src="js/js.cookie.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </html>
