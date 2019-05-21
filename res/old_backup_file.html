@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">    
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <title>Arbeitszeiten</title>
+</head>
+<body>
+
+    
+
+
+    <!--KOPF -->
+    <header class="w3-container w3-flat-wet-asphalt w3-text-white">
+        <h1>Arbeitszeiten - Kalender Generator</h1>
+    </header>
+
+    <div class="w3-row">
+        <!-- NEUER EINTRAG -->
+        <div class="w3-col l7 m6">
+            <div class="w3-container w3-section">
+                <div class="w3-card-4">
+                    <!-- KOPF -->
+                    <header class="w3-container w3-border-bottom w3-flat-belize-hole">
+                        <h3>Eintrag erstellen 📝</h3>
+                    </header>
+                    
+                    <!-- INHALT -->
+                    <div class="w3-container">
+                        <div class="w3-container w3-section">
+                            <div class="w3-section">
+                                <label><b>An welchem Tag 📆?</b></label>
+                                <input id="daten_tag" class="w3-input w3-border w3-light-grey" type="date">
+                            </div>
+
+                            <div class="w3-section">    
+                                <label><b>Um wie viel Uhr 🕔?</b></label>
+                                <input id="daten_zeit" class="w3-input w3-border w3-light-grey" type="time">
+                            </div>
+
+                            <div class="w3-section">
+                                <input id="daten_abruf" class="w3-check" type="checkbox">
+                                <label>Abrufbereit 📞</label>
+                            </div>
+
+                            <div class="w3-section">
+                                <button id="hinzufügen_btn" class="w3-btn w3-flat-wet-asphalt">Hinzufügen <i class="far fa-calendar-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FOOTER -->
+                    <footer class="w3-container w3-border-top w3-hide-small">
+                        <h6 class="w3-text-dark-grey">Coded with <i class="fa fa-heart"></i> by <a href="https://github.com/tjarbo/">tjarbo</a>. Special thanks to <a href="https://github.com/nwcell/">Travis Krause</a> for <a href="https://github.com/nwcell/ics.js/">ics.js <i class="fas fa-plug"></i></a></h6>
+                    </footer>     
+                </div>
+            </div>
+        </div>
+
+        <!-- DEINE EINTRÄGE -->
+        <div class="w3-col l5 m6">
+            <div class="w3-container w3-section">
+                <div class="w3-card-4">
+                    <!-- KOPF -->
+                    <header class="w3-container w3-border-bottom w3-flat-belize-hole">
+                        <h3>Deine Einträge</h3>
+                    </header>
+                    
+                    <!-- INHALT -->
+                    <div class="w3-container">
+                        <p>
+                            <table id="zeitentabelle" class="w3-table w3-hoverable">
+                                    <tr class="w3-flat-alizarin">
+                                        <th>Zeit</th>
+                                        <th>Abrufbereit</th>
+                                        <th></th>
+                                    </tr>
+                            </table>
+                        </p>
+                    </div>
+
+                    <!-- FOOTER -->
+                    <footer class="w3-container w3-border-top w3-padding">
+                        <button id="export_btn" onclick="return kalender_exportieren()" class="w3-btn w3-flat-belize-hole">Kalender Datei erstellen <i class="fas fa-cloud-download-alt"></i></button>
+                        <button onclick="document.getElementById('modal_einstellungen').style.display='block'" class="w3-btn w3-flat-wet-asphalt ">Einstellungen <i class="fas fa-cogs"></i></button>
+                    </footer>
+
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div id="modal_space">
+        <div id="modal_einstellungen" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container w3-flat-wet-asphalt">
+                <h3>Einstellungen</h3>
+                <span onclick="document.getElementById('modal_einstellungen').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+              </div>
+
+              <div class="w3-container w3-padding-large">
+                <label>Titel der Einträge</label>
+                <input id="eintrag_titel_inp" class="w3-input" type="text" placeholder="Arbeiten">
+
+                <button class="w3-button w3-flat-nephritis w3-margin-top" onclick="einstellungen_speichern()">Speichern</button>
+              </div>
+
+            </div>
+          </div>
+    </div>
+</body>
+
+<!-- JS-SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/ics.file.js"></script>
+<script type="text/javascript" src="js/js.cookie.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
