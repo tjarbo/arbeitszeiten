@@ -15,9 +15,10 @@ anzupassen und so weiter ...
 **1. Schritt**: Öffne [arbeitszeiten.tjarbo.me](http://arbeitszeiten.tjarbo.me/)
 
 **2. Schrritt**: Gehe jeden Termin einzeln durch und geben folgende Daten an:
-  - Den Tag: An welchem Tag musst du arbeiten?
-  - Die Uhrzeit: Ab wieviel Uhr musst du arbeiten
-  - Auf Abruf: Musst du an dem Eintrag nur abrufbereit sein ?
+
+- Den Tag: An welchem Tag musst du arbeiten?
+- Die Uhrzeit: Ab wieviel Uhr musst du arbeiten
+- Auf Abruf: Musst du an dem Eintrag nur abrufbereit sein ?
 
 **3. Schritt**: An der Seite siehst du nochmal eine Übersicht aller Termine. Schaue nocheinemal alle durch und wenn
 alles passt -> Klicke auf **Kalender Datei erstellen**
@@ -33,10 +34,11 @@ importiere die Datei manuell in deinen Kalender
 ## Board
 
 - [X] Export
+- [ ] Aussehen
 - [ ] Selbstdefinierte Titel für Einträge
 - [ ] und noch manches mehr ...
 
-### Module 
+### Module
 
 * [ics.js](https://github.com/nwcell/ics.js/) - A browser firendly VCS file generator written entirely in javascript by [Travis Krause](https://github.com/nwcell)
 
@@ -47,7 +49,7 @@ von PullRequests zu erfahren!
 
 ### Autoren
 
-* **Tjark** - *Initial work* - [Twitter](https://twitter.com/tjarbo_dev)
+**Tjark** - *Initial work* - [Twitter](https://twitter.com/tjarbo_dev)
 
 Siehe ebenfalls dir die Liste der [contributors](https://github.com/tjarbo/arbeitszeiten/contributors) an, welche ebenfalls mit an dem 
 Projekt gearbeitet haben.
