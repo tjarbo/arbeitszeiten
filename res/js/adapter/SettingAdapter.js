@@ -17,7 +17,7 @@ export class SettingAdapter {
 
         Cookies.set("settings", this.current)
 
-        this.modal_jq.toggle();
+        this.modal_jq.toggleClass("is-active")
     }
 
     load() {
@@ -28,7 +28,6 @@ export class SettingAdapter {
             $(setting_item).val(this.current[setting_item])
         }
 
-        this.modal_jq.toggle()
+        this.modal_jq.toggleClass("is-active")
     }
-
 }
