@@ -1,46 +1,47 @@
 # Arbeitszeiten
-Erstelle mit diesem Tools ganz einfach und schnell Kalendereinträge für deine Arbeitszeiten, anstatt dir
-jedes mal die Mühe zu machen, den Tag rauszusuchen, ein neues Event zu erstellen, einen Namen dafür anzugeben, die Zeiten
-anzupassen und so weiter ...
+Dieser Generator hilft dir dabei, ganz einfach und schnell eine Kalenderdatei für deine Arbeitszeiten zu erstellen, anstatt dir jedes mal die Mühe zu machen 
+den Tag rauszusuchen, ... ein neues Event zu erstellen, ... einen Namen dafür anzugeben, ... die Zeiten anzupassen, ... und so weiter ... 😴
 
-<hr />
-<h2 align="center">
-  🍄 Hier geht's zur Webseite: <a href="http://arbeitszeiten.tjarbo.me/">arbeitszeiten.tjarbo.me</a> 🍄
-</h2>
-<hr />
+***
+
+<h2 align="center">🍭🍄 Generator öffnen: <a href="http://arbeitszeiten.tjarbo.me/">arbeitszeiten.tjarbo.me</a>🍄🎉</h2>
+
+***
 
 
 ## Anleitung
 
 **1. Schritt**: Öffne [arbeitszeiten.tjarbo.me](http://arbeitszeiten.tjarbo.me/)
 
-**2. Schrritt**: Gehe jeden Termin einzeln durch und geben folgende Daten an:
+**2. Schritt**: Gehe jeden Termin einzeln durch und geben folgende Daten an:
 
-- Den Tag: An welchem Tag musst du arbeiten?
-- Die Uhrzeit: Ab wieviel Uhr musst du arbeiten
-- Auf Abruf: Musst du an dem Eintrag nur abrufbereit sein ?
+- Tag: An welchem Tag musst du arbeiten ?
+- Uhrzeit: Ab wieviel Uhr musst du arbeiten?
+- Abruf: Stehst du an dem Tag auf Abruf?
 
-**3. Schritt**: An der Seite siehst du nochmal eine Übersicht aller Termine. Schaue nocheinemal alle durch und wenn
-alles passt -> Klicke auf **Kalender Datei erstellen**
+**3. Schritt**: In der Tabelle siehst du nochmal eine Übersicht über alle Termine. Schaue diese zur Sicherheit nochmal durch und wenn alles passt -> Klicke auf *Kalender Datei erstellen*
 
-**4. Schritt**: Öffne die heruntergeladenen Datei. Es sollte sich (oft) automatisch dein Kalenderprogram öffnen. Sonst
-importiere die Datei manuell in deinen Kalender
+**4. Schritt**: Öffne die heruntergeladenen Datei. Es sollte sich automatisch dein Kalenderprogram öffnen - sonst importiere die Datei manuell in deinen Kalender (ist immer noch einfacher als jeeedddeeeenn Eintrag selbst zu verfassen xD )
 
 **Fertig 🎉**
 
 
 ## Entwicklung
 
-## Board
+Icon</b> von [Andrian Valeanu](https://www.iconfinder.com/icons/102551/file_paper_icon) unter [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/")
+
+### ToDo-Liste
 
 - [X] Export
-- [ ] Aussehen
-- [ ] Selbstdefinierte Titel für Einträge
-- [ ] und noch manches mehr ...
+- [X] Neues Aussehen
+- [X] Selbstdefinierte Titel für Einträge
 
-### Module
+### Frameworks
 
-* [ics.js](https://github.com/nwcell/ics.js/) - A browser firendly VCS file generator written entirely in javascript by [Travis Krause](https://github.com/nwcell)
+* [Bulma](https://bulma.io/) - Bulma is a free, open source CSS framework based on Flexbox and used by more than 150,000 developers.
+* [jQuery](https://jquery.com/) - A fast, small, and feature-rich JavaScript library 
+* [ics.js](https://github.com/nwcell/ics.js/) - A browser firendly VCS file generator written entirely in javascript.
+* [js.cookie](https://github.com/js-cookie/js-cookie) - A simple, lightweight JavaScript API for handling browser cookies.
 
 ### Contributing
 
