@@ -54,3 +54,5 @@ von PullRequests zu erfahren!
 
 Siehe ebenfalls dir die Liste der [contributors](https://github.com/tjarbo/arbeitszeiten/contributors) an, welche ebenfalls mit an dem 
 Projekt gearbeitet haben.
+
+[![Maybe you want to buy me some coffee?](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tjarbo)
