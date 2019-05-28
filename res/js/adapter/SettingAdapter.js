@@ -15,7 +15,7 @@ export class SettingAdapter {
             current[$(this).attr("id")] = $(this).val()
         })
 
-        Cookies.set("settings", this.current)
+        Cookies.set("settings", this.current, { expires: 60 })
 
         this.modal_jq.toggleClass("is-active")
     }
