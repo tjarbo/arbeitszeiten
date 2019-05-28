@@ -56,7 +56,9 @@ class App {
             item.location = this.settingadapter.current.app_settings_location || ""
             item.description = this.settingadapter.current.app_settings_description || ""
  
-            console.log("===> adding ", item)     
+            if (item.abruf) {item.title += " auf ABRUF"}    
+            
+            console.log("===> adding ", item)
             icsfile.addEvent(item.title, item.description, item.location, item.date+"T"+item.time+":00", item.date+"T"+item.endTime+":00")
         });
 
