@@ -47,12 +47,3 @@ Icon</b> von [Andrian Valeanu](https://www.iconfinder.com/icons/102551/file_pape
 
 Bitte schaue dir die [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) an um Details über den Code of Conduct und den Prozess zum Einreichen
 von PullRequests zu erfahren!
-
-### Autoren
-
-**Tjark** - *Initial work* - [Twitter](https://twitter.com/tjarbo_dev)
-
-Siehe ebenfalls dir die Liste der [contributors](https://github.com/tjarbo/arbeitszeiten/contributors) an, welche ebenfalls mit an dem 
-Projekt gearbeitet haben.
-
-[![Maybe you want to buy me some coffee?](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tjarbo)
